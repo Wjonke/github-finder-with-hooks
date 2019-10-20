@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
       <h1><i className= { icon }/> { title }</h1>
         
       <> 
-          <a href="https://github.com/Wjonke/github-finder"> Go to the code! ==>  https://github.com/Wjonke/github-finder </a> 
+          <a href="https://github.com/Wjonke/github-finder-with-hooks"> Go to the code! ==> </a> 
       </>
         <ul>
           <li>
