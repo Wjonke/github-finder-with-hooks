@@ -105,7 +105,7 @@ export const User = ( {user, loading, getUser, getUserRepos, repos, match} ) => 
           <div className="badge badge-dark">Public Gists: {public_gists} </div>
         </div>
         
-        <Repos repos={user.repos} />
+        <Repos repos={repos} />
       </>
     )
 }
