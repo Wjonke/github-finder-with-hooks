@@ -28,9 +28,6 @@ export const User = ( {user, loading, getUser, getUserRepos, repos, match} ) => 
       hireable,
     } = user;
 
-    
-    
-    
     if(loading) return <Spinner />;
 
     return (

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
- const UserItem = ({user: {login, avatar_url, html_url}} ) => {
+ const UserItem = ({user: {login, avatar_url}} ) => {
   //props is passed in here ^^^^ to give the rest of the function access to them. props will equal the info in ()
   //user comes from Users.js from the mapped users, we are specifying it to = the props in {}
 

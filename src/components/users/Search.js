@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-export const Search =( { searchUsers, showClear, clearUsers,setAlert } ) => {
+export const Search =( { searchUsers, showClear, clearUsers, setAlert } ) => {
   const [text, setText] = useState('')
   
   const onChange= (event) =>  setText(event.target.value )
