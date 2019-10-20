@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.disableLanguages": [],
+  
+  "emmet.includeLanguages":{
+    "javascript": "javascriptreact"
+  },
+  "cSpell.words": [
+    "repos"
+  ]
+    
+
+}
