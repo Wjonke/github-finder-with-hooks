@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -6,21 +6,12 @@ import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos'
 
 
-export class User extends Component {
-  componentDidMount() {
-    this.props.getUser(this.props.match.params.login);
-    this.props.getUserRepos(this.props.match.params.login);
-  }
-
-  static propTypes = {
-    loading: PropTypes.bool,
-    user: PropTypes.object.isRequired,
-    getUser: PropTypes.func.isRequired,
-    getUserRepos: PropTypes.func.isRequired,
-    repos:PropTypes.array.isRequired,
-  }
-
-  render() {
+export const User = ( {user, loading, getUser, getUserRepos, repos, match} ) => {
+  useEffect(() => {
+    getUser(match.params.login);
+    getUserRepos(match.params.login);
+    // eslint-disable-next-line
+  }, []);
 
     const {
       name, 
@@ -29,25 +20,21 @@ export class User extends Component {
       bio, 
       blog,
       company, 
-      login, 
-      // html_url,  
+      login,   
       followers, 
       following, 
       public_repos, 
       public_gists, 
       hireable,
-      // repos
-    } = this.props.user;
+    } = user;
 
     
     
-    const {loading} = this.props;
+    
     if(loading) return <Spinner />;
 
     return (
-      
       <>
-        
         <Link to='/' className="btn btn-dark btn-sm my-1"> Back to Search </Link>
             Hireable? : {'  '}
 
@@ -118,10 +105,16 @@ export class User extends Component {
           <div className="badge badge-dark">Public Gists: {public_gists} </div>
         </div>
         
-        <Repos repos={this.props.repos} />
+        <Repos repos={user.repos} />
       </>
     )
-  }
+}
+User.propTypes = {
+  loading: PropTypes.bool,
+  user: PropTypes.object.isRequired,
+  getUser: PropTypes.func.isRequired,
+  getUserRepos: PropTypes.func.isRequired,
+  repos:PropTypes.array.isRequired,
 }
 
 export default User
