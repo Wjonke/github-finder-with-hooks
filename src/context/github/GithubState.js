@@ -43,16 +43,20 @@ const GithubState = props => {
 
 
 
-  return <githubContext.provider
+  return <githubContext.Provider
     value={ {
       users: state.users,
       user: state.user,
       repos: state.repos,
       loading: state.loading,
+
+
     } }
   >
+    
     {props.children}
-  </githubContext.provider>
+
+  </githubContext.Provider>
 }
 
 export default GithubState;

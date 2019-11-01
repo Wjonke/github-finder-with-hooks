@@ -21,25 +21,6 @@ const App = () => {
   const [alert, setAlert] = useState(null)
  
 
-// old states below from class components
-  // state= {
-  //   users: [],
-  //   user:{},
-  //   repos:[],
-  //   loading: false,
-  //   alert:null
-  // }
-
-  // useEffect(() => {
-   
-  //   setLoading(true)
-
-  //   const res = axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
-
-
-
-
-
   const searchUsers= async text => {
     setLoading(true)
     const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
