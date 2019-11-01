@@ -12,7 +12,7 @@ import './App.css';
 
 
 const App = () => {
-  //new useStates below after hooks
+
   const [alert, setAlert] = useState(null)
  
   //set off Alert if search is empty which disappears in 2 seconds
