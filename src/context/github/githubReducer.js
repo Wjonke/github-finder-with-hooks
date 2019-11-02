@@ -3,9 +3,7 @@ import {
   GET_REPOS,
   GET_USER,
   CLEAR_USERS,
-  SET_ALERT,
   SET_LOADING,
-  REMOVE_ALERT
 } from'../types'
 
 export default (state, action) => {
