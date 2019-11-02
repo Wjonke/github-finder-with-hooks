@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react';
-import axios  from "axios";
 
 import alertContext from './alertContext'
 import alertReducer from './alertReducer'
@@ -12,8 +11,14 @@ const AlertState = props => {
   const [state, dispatch] = useReducer(alertReducer, initialState)
 
 
-  ////////////Sets Alert message///////////
-
+ //set off Alert if search is empty which disappears in 2 seconds
+  const setAlert= (msg, type) => {
+    dispatch({
+      type:SET_ALERT,
+      payload: { msg, type }
+    })
+    setTimeout(() => { dispatch({ type: REMOVE_ALERT}) }, 2000);
+  }
 
 
 

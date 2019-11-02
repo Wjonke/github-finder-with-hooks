@@ -13,27 +13,17 @@ import './App.css';
 
 const App = () => {
 
-  const [alert, setAlert] = useState(null)
- 
-  //set off Alert if search is empty which disappears in 2 seconds
-  const showAlert= (msg, type) => {
-    setAlert({ msg, type });
-    setTimeout(() => {
-      setAlert(null)
-    }, 2000);
-  }
-
     return (
       <div className="App">
 
         <Navbar />     
-        <Alert alert={alert} />
+        <Alert  />
 
         <div className="container">
           <Switch>
             <Route exact path='/' render={props => (
               <>
-                <Search setAlert={showAlert} />
+                <Search />
                 <Users /> 
               </>
               )} 
